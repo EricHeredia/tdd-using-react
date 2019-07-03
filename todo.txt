@@ -1,5 +1,6 @@
 There should be a button for each store location
 Each store button should display the name of the location
+There should be a header above the buttons
 Clicking a button passes a value to a function
 
 Completed
