@@ -1,12 +1,13 @@
-import React from 'react'
-//import logo from './logo.svg'
+import React, { Component } from 'react'
 
-function Header() {
-  return (
-    <div className="Header">
-      <p>This is the header.</p>
-    </div>
-  )
+class Header extends Component {
+  render() {
+    return (
+      <div className="Header">
+        <img src="images/wired-brain-coffee-logo.png" alt="Wired Brain" />
+      </div>
+    )
+  }
 }
 
 export default Header

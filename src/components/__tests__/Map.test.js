@@ -18,4 +18,9 @@ describe("Map", function() {
     const img = mountedMap.find('img');
     expect(img.length).toBe(1);
   })
+
+  it('displays the none map when no params are give', () => {
+    const defaultMap = mountedMap.find('img[src="images/none.png"]');
+    expect(defaultMap.length).toBe(1);
+  })
 })

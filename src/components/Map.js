@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Map extends Component {
   render() {
-    return (<img alt="default" src="default.jpg" />); 
+    return (<img src="images/none.png" alt="No Store Selected" />); 
   }
 }
 
