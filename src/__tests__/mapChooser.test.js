@@ -6,4 +6,9 @@ describe("mapChooser", function() {
     let actual = mapChooser("portland");
     expect(actual).toEqual(expected);
   });
+  it("returns a default image when no input is given", function() {
+    let expected = "default.jpg";
+    let actual = mapChooser("");
+    expect(actual).toEqual(expected);
+  });
 })
