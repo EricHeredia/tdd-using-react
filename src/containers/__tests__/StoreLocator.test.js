@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import StoreLocator from '../StoreLocator';
-import * as axios from 'axios';
+import axios from 'axios';
 
 describe('StoreLocator', function() {
   

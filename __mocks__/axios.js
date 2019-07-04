@@ -19,4 +19,4 @@ function req() {
   });
 }
 
-module.export = axiosMock;
+module.exports = axiosMock;
