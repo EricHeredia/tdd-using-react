@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import StoreLocator from '../StoreLocator';
+import * as axios from 'axios';
 
 describe('StoreLocator', function() {
   
@@ -8,6 +9,12 @@ describe('StoreLocator', function() {
 
   beforeEach(() => {
     mountedStoreLocator = shallow(<StoreLocator />);
+  })
+
+  it('calls axios.get in #componentDidMount', () => {
+    return mountedStoreLocator.instance().componentDidMount().then(() => {
+      expect(axios.get).toHaveBeenCalled();
+    })
   })
 
   it('renders without crashing', () => {
@@ -27,5 +34,14 @@ describe('StoreLocator', function() {
   it('renders a map', () => {
     const maps = mountedStoreLocator.find('Map');
     expect(maps.length).toBe(1);
+  })
+})
+
+describe('chooseMap', () => {
+  it('updates this.state.currentMap using the location passed to it', () => {
+    let mountedStoreLocator = shallow(<StoreLocator />);
+    let mockEvent = {target: {value: 'testland'}};
+    mountedStoreLocator.instance().chooseMap(mockEvent);
+    expect(mountedStoreLocator.instance().state.currentMap).toBe('testland.png');
   })
 })
